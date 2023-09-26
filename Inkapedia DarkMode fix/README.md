@@ -1,3 +1,6 @@
+# Inkapedia DarkMode fix
+## [Grab on UserStyles.World for auto updates](https://userstyles.world/style/10172/inkapedia-darkmode-fix)
+
 UserStyle that aims to fix problems with the Inkapedia's darkmode (not fully complete).
 
 This version does not change the Twitter embeds unlike the [UserScript version](https://greasyfork.org/en/scripts/467839-inkapedia-darkmode-fix)
