@@ -1,0 +1,33 @@
+/* ==UserStyle==
+@name           Holodex Sticky close favorites button
+@namespace      github.com/openstyles/stylus
+@version        1.0.0
+@description    Makes the close favorites button on Holodex sticky
+@author         WhiteTapeti
+
+@advanced color cor1 "Background Color" #272727
+@advanced color cor2 "Hover Background Color" #383838
+
+@advanced dropdown SEPERT "Separate Show All And Close Colors On/Off" {
+ED1 "Disabled" <<<EOT div.v-list-item.v-list-item--link:has(> div.v-list-item__action > span.v-icon.notranslate > svg.v-icon__svg > path[d='M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z']) {background-color: /*[[cor1]]*/;} div.v-list-item.v-list-item--link:has(> div.v-list-item__action > span.v-icon.notranslate > svg.v-icon__svg > path[d='M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z']):hover {background-color: /*[[cor2]]*/;} EOT;
+ED2 "Enabled" <<<EOT div.v-list-item.v-list-item--link:has(> div.v-list-item__action > span.v-icon.notranslate > svg.v-icon__svg > path[d='M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z']) {background-color: /*[[cor3]]*/;} div.v-list-item.v-list-item--link:has(> div.v-list-item__action > span.v-icon.notranslate > svg.v-icon__svg > path[d='M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z']):hover {background-color: /*[[cor4]]*/;} EOT;
+}
+
+@advanced color cor3 "Show All Background Color ⚠(Separate Color Needs To Be Enabled)" #272727
+@advanced color cor4 "Show All Hover Background Color ⚠(Separate Color Needs To Be Enabled)" #383838
+==/UserStyle== */
+@-moz-document domain("holodex.net") {
+    div.v-list-item.v-list-item--link:has(> div.v-list-item__action > span.v-icon.notranslate > svg.v-icon__svg > path[d='M7.41,15.41L12,10.83L16.59,15.41L18,14L12,8L6,14L7.41,15.41Z']) {
+        position: sticky;
+        bottom: 29px;
+        background-color: /*[[cor1]]*/;
+    }
+    
+    div.v-list-item.v-list-item--link:has(> div.v-list-item__action > span.v-icon.notranslate > svg.v-icon__svg > path[d='M7.41,15.41L12,10.83L16.59,15.41L18,14L12,8L6,14L7.41,15.41Z']):hover {
+        background-color: /*[[cor2]]*/;
+    }
+
+    /*SHOW ALL*/
+/*[[SEPERT]]*/
+    
+}
