@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Inkapedia DarkMode fix
 @namespace      github.com/openstyles/stylus
-@version        1.5
+@version        1.5.1
 @description    Userstyle that aims to fix problems with the inkapedia darkmode (not fully complete)
 @author         WhiteTapeti
 ==/UserStyle== */
@@ -151,6 +151,10 @@
         background-color: rgb(58 58 58 / 71%);
     }
 
+    .ve-init-mw-progressBarWidget {
+        background-color: #272727;
+    }
+
     .oo-ui-barToolGroup-tools.oo-ui-toolGroup-disabled-tools .oo-ui-tool.oo-ui-flaggedElement-primary > .oo-ui-tool-link,
     .oo-ui-barToolGroup-tools.oo-ui-toolGroup-enabled-tools .oo-ui-tool.oo-ui-widget-disabled.oo-ui-flaggedElement-primary > .oo-ui-tool-link {
         background-color: #1a1919;
@@ -159,6 +163,13 @@
 
     .oo-ui-tool.oo-ui-widget-enabled.oo-ui-flaggedElement-primary.oo-ui-flaggedElement-progressive > .oo-ui-tool-link {
         background-color: #0046a7;
+    }
+    .oo-ui-toolbar-position-top > .oo-ui-toolbar-bar {
+        border-bottom: none;
+    }
+    .oo-ui-menuToolGroup {
+        border-left: none;
+        border-right: none;
     }
 
     .mw-ui-icon-undo:before,
@@ -351,6 +362,12 @@
     .oo-ui-icon-specialCharacter {
         background-image: url(https://files.catbox.moe/438v5j.png);
         background-image: linear-gradient(transparent, transparent), url("https://files.catbox.moe/2bqju7.svg");
+    }
+    .oo-ui-popupWidget-anchored-top .oo-ui-popupWidget-anchor:before {
+        border-bottom-color: #000000;
+    }
+    .oo-ui-popupWidget-anchored-top .oo-ui-popupWidget-anchor:after {
+        border-bottom-color: #202020;
     }
 }
 
