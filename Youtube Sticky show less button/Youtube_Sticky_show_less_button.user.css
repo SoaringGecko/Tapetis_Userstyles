@@ -1,0 +1,39 @@
+/* ==UserStyle==
+@name           Youtube Sticky show less button
+@namespace      github.com/openstyles/stylus
+@version        1.0.1
+@description    Makes the show less button for subscriptions/playlists and video descriptions sticky. If you only want one of these features but not the other, they can be toggled (You may need to go into the options to disable and then re-enable them if they aren't working, but should work fine after that). You can also easily change the background color to make it properly match whatever other themes you may have installed.
+@author         WhiteTapeti
+
+
+@advanced dropdown ENSL "Show Less Sticky On/Off" {
+ES1 "Enabled" <<<EOT ytd-guide-entry-renderer#collapser-item.style-scope.ytd-guide-collapsible-entry-renderer:not(#expandable-items) {--background-color: /*[[cor1]]*/;position: -webkit-sticky;position: sticky;bottom: 0;background-color: var(--background-color)} #endpoint.yt-simple-endpoint.ytd-guide-entry-renderer[title="Show less"]:hover{background-color: var(--background-color)!important;border-radius:10px;filter:saturate(1.5)} EOT;
+ES2 "Disabled" <<<EOT EOT;
+}
+
+@advanced color cor1 "Background Color" #0f0f0f
+
+@advanced dropdown ENDESC "Video Desc Sticky On/Off" {
+ED1 "Enabled" <<<EOT ytd-text-inline-expander {display: inline;}tp-yt-paper-button#expand.button.style-scope.ytd-text-inline-expander {position: /*[[SMALIGN]]*/;background-color: transparent}tp-yt-paper-button#collapse.button.style-scope.ytd-text-inline-expander{--video-desc-background-color: /*[[cor2]]*/;position: -webkit-sticky;position: sticky;bottom: 0;width: 100%;width: -moz-available;width: -webkit-fill-available;width: fill-available;/*[[SLALIGN]]*/background-color: var(--video-desc-background-color)} EOT;
+ED2 "Disabled" <<<EOT EOT;
+}
+
+@advanced color cor2 "Video Desc Background Color" #272727
+
+@advanced dropdown SMALIGN "Video Desc Text Align Show More" {
+SM1 "Left" <<<EOT unset EOT;
+SM2 "Center" <<<EOT initial;width: 100%;width: -moz-available;width: -webkit-fill-available;width: fill-available; EOT;
+}
+
+@advanced dropdown SLALIGN "Video Desc Text Align Show Less" {
+SL1 "Left" <<<EOT display: block; EOT;
+SL2 "Center" <<<EOT EOT;
+}
+
+==/UserStyle== */
+@-moz-document domain("youtube.com"),
+domain("www.youtube.com") {
+    /*[[ENSL]]*/
+    /*[[ENDESC]]*/
+    
+}
