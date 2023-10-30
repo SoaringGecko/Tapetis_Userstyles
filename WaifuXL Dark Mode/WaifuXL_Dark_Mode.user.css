@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           WaifuXL Dark Mode
 @namespace      github.com/openstyles/stylus
-@version        1.0.0
+@version        1.0.2
 @description    Dark Mode for WaifuXL
 @author         WhiteTapeti
 ==/UserStyle== */
@@ -12,7 +12,6 @@
 * Autoprefixer: v10.4.7
 * Browsers: >0.001%,defaults,maintained node versions,last 4 versions,not dead
 */
-    /*! CSS Used from: Embedded ; media=screen */
     @media screen {
         [data-inline-bgcolor] {
             background-color: var(--inline-bgcolor)!important;
@@ -417,9 +416,6 @@
     .mr-5 {
         margin-right: 1.25rem;
     }
-    .mt-1 {
-        margin-top: .25rem;
-    }
     .mt-10 {
         margin-top: 2.5rem;
     }
@@ -442,9 +438,6 @@
         display: -ms-grid;
         display: grid;
     }
-    .hidden {
-        display: none;
-    }
     .h-3\/4 {
         height: 75%;
     }
@@ -453,9 +446,6 @@
     }
     .h-6 {
         height: 1.5rem;
-    }
-    .h-full {
-        height: 100%;
     }
     .min-h-0 {
         min-height: 0;
@@ -474,9 +464,6 @@
     }
     .w-auto {
         width: auto;
-    }
-    .w-full {
-        width: 100%;
     }
     .flex-1 {
         -webkit-box-flex: 1;
@@ -762,6 +749,12 @@
             line-height: 1;
         }
     }
+    select#preset-select {
+        border: solid 2px #44abbc;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+    }
     #stock-image {
         width: auto;
         height: 70vh;
@@ -930,6 +923,9 @@
             --text--tw-text-opacity: 1;
             color: rgb(192, 186, 178);
         }
+        span.text-gray-700 {
+            color: rgb(232, 230, 227);
+        }
         .focus\:outline-none:focus {
             outline-color: transparent;
         }
@@ -977,5 +973,13 @@
     }
     a.text-3xl.font-semibold:not(.text-white) {
         color: rgb(41, 37, 37);
+    }
+    path[d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z"],
+    path[d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"],
+    path[d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"] {
+        fill: #fff;
+    }
+    .h-5.w-auto.pl-3 {
+        filter: invert(100%) sepia(0%) saturate(7492%) hue-rotate(92deg) brightness(104%) contrast(102%);
     }
 }
