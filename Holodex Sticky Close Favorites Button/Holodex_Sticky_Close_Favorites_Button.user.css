@@ -1,20 +1,35 @@
 /* ==UserStyle==
-@name           Holodex Sticky close favorites button
+@name           Holodex QOL
 @namespace      github.com/openstyles/stylus
-@version        1.0.1
+@version        1.1.1
 @description    Makes the close favorites button on Holodex sticky
 @author         WhiteTapeti
+@homepageURL    https://userstyles.world/style/12225/holodex-sticky-close-favorites-button
 
-@advanced color cor1 "Background Color" #272727
-@advanced color cor2 "Hover Background Color" #383838
+@advanced color cor1 "Show All/Close Background Color" #272727
+@advanced color cor2 "Show All/Close Hover Background Color" #383838
 
 @advanced dropdown SEPERT "Separate Show All And Close Colors On/Off" {
-ED1 "Disabled" <<<EOT div.v-list-item.v-list-item--link:has(> div.v-list-item__action > span.v-icon.notranslate > svg.v-icon__svg > path[d='M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z']) {background-color: /*[[cor1]]*/;} div.v-list-item.v-list-item--link:has(> div.v-list-item__action > span.v-icon.notranslate > svg.v-icon__svg > path[d='M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z']):hover {background-color: /*[[cor2]]*/;} EOT;
-ED2 "Enabled" <<<EOT div.v-list-item.v-list-item--link:has(> div.v-list-item__action > span.v-icon.notranslate > svg.v-icon__svg > path[d='M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z']) {background-color: /*[[cor3]]*/;} div.v-list-item.v-list-item--link:has(> div.v-list-item__action > span.v-icon.notranslate > svg.v-icon__svg > path[d='M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z']):hover {background-color: /*[[cor4]]*/;} EOT;
+ED1 "Off" <<<EOT div.v-list-item.v-list-item--link:has(> div.v-list-item__action > span.v-icon.notranslate > svg.v-icon__svg > path[d='M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z']) {background-color: /*[[cor1]]*/;} div.v-list-item.v-list-item--link:has(> div.v-list-item__action > span.v-icon.notranslate > svg.v-icon__svg > path[d='M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z']):hover {background-color: /*[[cor2]]*/;} EOT;
+ED2 "On" <<<EOT div.v-list-item.v-list-item--link:has(> div.v-list-item__action > span.v-icon.notranslate > svg.v-icon__svg > path[d='M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z']) {background-color: /*[[cor3]]*/;} div.v-list-item.v-list-item--link:has(> div.v-list-item__action > span.v-icon.notranslate > svg.v-icon__svg > path[d='M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z']):hover {background-color: /*[[cor4]]*/;} EOT;
 }
 
 @advanced color cor3 "Show All Background Color ⚠(Separate Color Needs To Be Enabled)" #272727
 @advanced color cor4 "Show All Hover Background Color ⚠(Separate Color Needs To Be Enabled)" #383838
+    
+@advanced dropdown pageNumStick "Make Page Number Navigater Sticky On/Off" {
+PNSO2 "On" <<<EOT .d-flex.justify-center.py-4{position:sticky;bottom:-25px;z-index:1;background-color:/*[[cor5]]*/} EOT;
+PNSO1 "Off" <<<EOT .d-flex.justify-center.py-4{background-color:/*[[cor5]]*/} EOT;
+}
+@advanced color cor5 "Page Number Navigater Background Color (Normal Default Is Transparent)" #121212
+    
+@advanced color cor6 "Video Link Background Color" #12121200
+@advanced color cor7 "Video Link Background Color On Hover" #292929
+@advanced dropdown vidHov "Make Videos Go Over Nav Menus On Hover On/Off" {
+VHO1 "Off" <<<EOT .video-col.video-4.flex-column.col:hover{background-color:/*[[cor7]]*/;border-radius:4px;} EOT;
+VHO2 "On" <<<EOT .video-col.video-4.flex-column.col:hover{z-index:5;background-color:/*[[cor7]]*/;border-radius:4px;transform:scale(/*[[vidPopScal]]*/);transition:transform .3s ease-in-out} .v-app-bar.v-app-bar--fixed{z-index:6} EOT;
+}
+@advanced text vidPopScal "Make Video Link Popout On Hover ⚠(Set To 1 Or Make Blank To Disable, 1.1 Recommended)" 1
 ==/UserStyle== */
 @-moz-document domain("holodex.net") {
     div.v-list-item.v-list-item--link:has(> div.v-list-item__action > span.v-icon.notranslate > svg.v-icon__svg > path[d='M7.41,15.41L12,10.83L16.59,15.41L18,14L12,8L6,14L7.41,15.41Z']) {
@@ -27,8 +42,23 @@ ED2 "Enabled" <<<EOT div.v-list-item.v-list-item--link:has(> div.v-list-item__ac
     div.v-list-item.v-list-item--link:has(> div.v-list-item__action > span.v-icon.notranslate > svg.v-icon__svg > path[d='M7.41,15.41L12,10.83L16.59,15.41L18,14L12,8L6,14L7.41,15.41Z']):hover {
         background-color: /*[[cor2]]*/;
     }
+    
+    .row.video-row.row--dense{
+        background-color:/*[[cor6]]*/;
+    }
 
     /*SHOW ALL*/
-/*[[SEPERT]]*/
-    
+    /*[[SEPERT]]*/
+    /*[[pageNumStick]]*/
+    /*[[vidHov]]*/
 }
+
+/*
+.video-col.video-4.flex-column.col:hover {
+    z-index: 2;
+    background-color: #121212;
+    border-radius: 4px;
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+*/
