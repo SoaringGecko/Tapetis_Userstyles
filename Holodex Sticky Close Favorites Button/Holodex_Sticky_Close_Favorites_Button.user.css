@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Holodex QOL
 @namespace      github.com/openstyles/stylus
-@version        1.1.1
+@version        1.1.2
 @description    Makes the close favorites button on Holodex sticky
 @author         WhiteTapeti
 @homepageURL    https://userstyles.world/style/12225/holodex-sticky-close-favorites-button
@@ -49,9 +49,9 @@ VHO2 "On" <<<EOT .video-col.video-4.flex-column.col:hover{z-index:5;background-c
 
     /*SHOW ALL*/
     /*[[SEPERT]]*/
-    /*[[pageNumStick]]*/
     /*[[vidHov]]*/
 }
+    @-moz-document regexp(".*holodex\.net(?!\/\#clips).*") { /*[[pageNumStick]]*/ }
 
 /*
 .video-col.video-4.flex-column.col:hover {
